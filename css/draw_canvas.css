@@ -1,0 +1,107 @@
+/* ******************** canvas styles  ******************** */
+
+canvas {
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.container {
+    position: relative;
+    top: 10%;
+    width: 75%;
+    max-width: 993px;
+}
+
+.col {
+    margin: 1rem;
+}
+
+.canvas_container {
+    min-width: 300px;
+}
+
+@media only screen and (max-width: 420px) {
+    .container {
+        width: 85%;
+        margin-right: 2rem;
+    }
+
+    .canvas_container {
+        min-width: 250px;
+    }
+
+    #canvas {
+        height: 250px;
+        width: 250px;
+    }
+
+    input[type=range] {
+        width: 90%;
+    }
+}
+
+#train_pos:checked+label {
+    color: #1f77b4;
+}
+
+#train_pos:checked+label::after {
+    background-color: #1f77b4;
+}
+
+#train_pos:checked+label::after,
+#train_pos:checked+label::before {
+    border: 2px solid #1f77b4;
+}
+
+#train_neg:checked+label {
+    color: #f59c36;
+}
+
+#train_neg:checked+label::after {
+    background-color: #f59c36;
+}
+
+#train_neg:checked+label::after,
+#train_neg:checked+label::before {
+    border: 2px solid #f59c36;
+}
+
+#test_pos:checked+label {
+    color: 0068ad;
+}
+
+#test_pos:checked+label::after {
+    background-color: #0068ad;
+    border: 2px solid black;
+}
+
+#test_neg:checked+label {
+    color: #ff6100;
+}
+
+/* ******************** canvas styles  ******************** */
+
+#test_neg:checked+label::after {
+    background-color: #ff6100;
+    border: 2px solid black;
+}
+
+.canvas_controls {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+
+#canvas_clear {
+    color: white;
+    background-color: #ff5722;
+}
+
+#canvas_data_download {
+    color: white;
+    background: darkorange;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logistic Regression - ML playground</title>
+    <!-- add favicon to the tool-bar. -->
+    <link rel="icon" href=" ../img/ailogo.png" sizes="32x32" />
+    <link rel="apple-touch-icon-precomposed"
+        href="https://zone1-otkgute.netdna-ssl.com/wp-content/uploads/2017/09/aifav.png" />
+    <meta name="msapplication-TileImage"
+        content="https://zone1-otkgute.netdna-ssl.com/wp-content/uploads/2017/09/aifav.png" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons" rel="stylesheet"
+        type="text/css">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
+
+    <!-- adding css to our path-->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/draw_canvas.css" />
+
+</head>
+
+<body>
+
+    <!-- ----------------------------------------------------- -->
+    <!-- --------------------------------------------------- -->
+    <!-- ------ Nav nar with tabs in them. -->
+    <nav>
+        <a href="https://www.appliedaicourse.com/" target="_blank" class="brand-logo left center-align">
+            <img src="../img/ailogo.png" />
+        </a>
+        <h5>Dataset Creation Tool</h5>
+    </nav>
+
+    <!-- ----------------------------------------------------- -->
+    <!-- -------------- CANVAS TO DRAW THE DATA -------------- -->
+    <!-- ----------------------------------------------------- -->
+    <div class="container">
+
+        <div class="row" style="padding-top:4rem;margin-top:3rem">
+
+            <!-- Canvas that can filt ontp -->
+            <div class="col s12 m6  push-m3 l4 push-l1 center-align canvas_container">
+                <canvas id="canvas" width="300" height="300"></canvas>
+                <br />
+                <button class="btn waves-effect waves-dark z-depth-1" id="canvas_clear">
+                    Clear Canvas
+                </button>
+            </div>
+
+            <!-- Controls on how to draw points on canvas. -->
+            <div class="col s12 m8 push-m2 l4 push-l2 center-align">
+                <div class="canvas_controls left-align">
+                    <!-- sliders for cluster size and delay between drawing between each cluster -->
+                    <div class="range-field">
+                        <b>Points Per Click : </b> <span class="ppc_text">3</span>
+                        <input type="range" id="ppc" min="1" max="5" value="3" />
+                    </div>
+                    <div class="range-field">
+                        <b>Delay (ms) : </b> <span class="delay_text">50</span>
+                        <input type="range" id="delay" min="50" max="200" value="50" />
+                    </div>
+
+                    <!-- slider to select the radius -->
+                    <div class="range-field">
+                        <b>Cluster radius (px) : </b> <span class="radius_text">10</span>
+                        <br />
+                        <input type="range" id="radius" min="5" max="25" value="10" />
+                    </div>
+
+                    <!-- Check box for train and test points (+ve and -ve separately) -->
+                    <div style="display: flex;margin: 1rem 0">
+                        <div style="border: 0px solid;">
+                            <input id="train_pos" class="with-gap" name="train_test_select" type="radio" checked />
+                            <label for="train_pos">Train(+ve)</label>
+
+                            <input id="test_pos" name="train_test_select" type="radio" />
+                            <label for="test_pos">Test(+ve)</label>
+                        </div>
+                        <div style="border: 0px solid;">
+                            <input id="train_neg" class="with-gap" name="train_test_select" type="radio" />
+                            <label for="train_neg">Train(-ve)</label>
+
+                            <input id="test_neg" name="train_test_select" type="radio" />
+                            <label for="test_neg">Test(-ve)</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="margin-top: 3rem;">
+                    <button class=" btn waves-effect waves-blue z-depth-1" id="canvas_data_download">
+                        Download Data
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+<!--We will add all of our javascript files at the end of body for optimized loading....-->
+<!-- Adding JQuery to the path. -->
+<script src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/materialize.min.js"></script>
+
+<script src='./js/jquery.csv.min.js'></script>
+
+
+
+<!-- Adding our custom javascript file.. -->
+<script src="./js/draw_canvas.js"></script>
+
+</html>
